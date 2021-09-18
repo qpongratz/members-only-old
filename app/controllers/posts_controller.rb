@@ -18,7 +18,9 @@ class PostsController < ApplicationController
 
     if @post.save
       redirect_to posts_path
+      flash[:notice] = 'Success. Post has been created.'
     else
+      flash.now[:alert] = 'Not posted. Errors in form.'
       render :new
     end
   end

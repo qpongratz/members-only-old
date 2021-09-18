@@ -1,4 +1,6 @@
+<% if user_signed_in? %>
 <%= link_to 'Create a new post', new_post_path %><br><br>
+<% end %>
 <br><br>
 <% @posts.each do |post| %>
   <div class="post">
@@ -19,4 +21,4 @@
   <br>
 <% end %>
 <br><br>
-There is some text here at the bottom.
+<small>Have a nice day. <3</small>

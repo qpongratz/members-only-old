@@ -1,7 +1,11 @@
 <%= link_to 'Create a new post', new_post_path %><br><br>
 <br><br>
 <% @posts.each do |post| %>
-  <div class="post"><%= post %></div>
+  <div class="post">
+    <%= post.title %> <br>
+    <%= post.body %> <br>
+    <%= p post.user.username %>
+  </div>
   <br>
 <% end %>
 <br><br>

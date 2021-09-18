@@ -2,9 +2,19 @@
 <br><br>
 <% @posts.each do |post| %>
   <div class="post">
-    <%= post.title %> <br>
-    <%= post.body %> <br>
-    <%= p post.user.username %>
+    <div class="title">
+      <%= link_to post.title, post %>
+    </div>
+    <div class="body">
+      <%= post.body %>
+    </div>
+    <div class="author">
+    <% if user_signed_in? %>
+      <%= post.user.username %>
+    <% else %>
+      Anonymous
+    <% end %>
+    </div>
   </div>
   <br>
 <% end %>

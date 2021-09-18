@@ -1,0 +1,14 @@
+<div class="post">
+  <div class="title">
+    <%= @post.title %>
+  </div>
+  <div class="body">
+    <%= @post.body %>
+  </div>
+  <div class="author">
+  <% if user_signed_in? %>
+    <%= @post.user.username %>
+  <% else %>
+    Anonymous
+  <% end %>
+</div>

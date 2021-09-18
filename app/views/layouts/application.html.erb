@@ -13,10 +13,12 @@
   <body>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+    <h1><%= link_to 'Members Only', posts_path %></h1>
     <% if user_signed_in? %>
       <%= link_to 'Edit Profile', edit_user_registration_path %>
       <%= link_to 'Log Out', destroy_user_session_path, method: :delete %>
     <% else %>
+      <h2>Sign in to see which users wrote what.</h2>
       <%= link_to 'Sign Up', new_user_registration_path %>
       <%= link_to 'Sign In', new_user_session_path %>
     <% end %>

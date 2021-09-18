@@ -12,3 +12,7 @@
     Anonymous
   <% end %>
 </div>
+<% if current_user == @post.user %>
+  <%= link_to 'Edit Post', edit_post_path %>
+  <%= link_to 'Delete Post', @post, method: :delete %>
+<% end %>

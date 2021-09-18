@@ -30,11 +30,13 @@ class PostsController < ApplicationController
   end
 
   def update
-    @post = Post.find_by_id(post_params)
+    @post = Post.find_by_id(params[:id])
 
-    if @post.update
+    if @post.update(post_params)
       redirect_to @post
+      flash[:notice] = 'Success. Post has been edited.'
     else
+      flash.now[:alert] = 'Not updated. Errors in form.'
       render :edit
     end
   end
